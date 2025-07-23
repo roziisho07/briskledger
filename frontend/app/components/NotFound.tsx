@@ -14,10 +14,12 @@ export default function NotFound() {
           <FaExclamationTriangle />
         </div>
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          404 - Page Not Found
+          {"404 - Page Not Found"}
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          Oops! The page you're looking for doesn't exist or has been moved.
+          {
+            " Oops! The page you're looking for doesn't exist or has been moved."
+          }
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -36,12 +38,12 @@ export default function NotFound() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-gray-200">
-          <p className="text-gray-500 mb-2">Need accounting help?</p>
+          <p className="text-gray-500 mb-2">{"Need accounting help?"}</p>
           <Link
             href="/contact"
             className="text-[#009d85] hover:underline font-medium"
           >
-            Contact our team →
+            {"Contact our team →"}
           </Link>
         </div>
       </div>

@@ -14,8 +14,9 @@ export function ClientReviews({ reviews }: { reviews: ReviewQueryResult }) {
             What Our <span className="text-[#009d85]">Clients Say</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it - hear from businesses we've helped
-            grow
+            {
+              "Don't just take our word for it - hear from businesses we've helped grow"
+            }
           </p>
         </div>
 

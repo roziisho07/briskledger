@@ -15,6 +15,7 @@ import {
 import { SiGooglemaps } from "react-icons/si";
 import Image from "next/image";
 import contactHero from "@/public/images/accountant2.png";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -77,7 +78,9 @@ export default function ContactPage() {
               Contact <span className="text-white">Our Team</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-              Get personalized financial solutions from our expert accountants
+              {
+                "Get personalized financial solutions from our expert accountants"
+              }
             </p>
           </div>
         </div>
@@ -90,11 +93,12 @@ export default function ContactPage() {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Let's Connect
+                {"Let's Connect"}
               </h2>
               <p className="text-gray-600 text-lg">
-                Our team typically responds within 24 hours. For urgent matters,
-                please call us directly.
+                {
+                  "Our team typically responds within 24 hours. For urgent matters, please call us directly."
+                }
               </p>
             </div>
 
@@ -112,14 +116,14 @@ export default function ContactPage() {
                     <br />
                     Financial District, NY 10001
                   </p>
-                  <a
+                  <Link
                     href="https://maps.google.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#009d85] hover:underline mt-3 inline-flex items-center font-medium"
                   >
                     <SiGooglemaps className="mr-2" /> View on map
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -132,16 +136,16 @@ export default function ContactPage() {
                     Phone
                   </h3>
                   <p className="text-2xl font-medium text-gray-800">
-                    <a
+                    <Link
                       href="tel:+12125550123"
                       className="hover:text-[#009d85] transition-colors"
                     >
-                      +1 (212) 555-0123
-                    </a>
+                      {"+1 (212) 555-0123"}
+                    </Link>
                   </p>
                   <p className="text-gray-500 mt-2">
                     <FaClock className="inline mr-2 text-[#009d85]" />
-                    Mon-Fri: 9am-5pm EST
+                    {"Mon-Fri: 9am-5pm EST"}
                   </p>
                 </div>
               </div>
@@ -155,12 +159,12 @@ export default function ContactPage() {
                     Email
                   </h3>
                   <p className="text-xl font-medium text-gray-800">
-                    <a
+                    <Link
                       href="mailto:info@accountingfirm.com"
                       className="hover:text-[#009d85] transition-colors"
                     >
                       info@accountingfirm.com
-                    </a>
+                    </Link>
                   </p>
                   <p className="text-gray-500 mt-2">Response time: 24 hours</p>
                 </div>
@@ -171,24 +175,24 @@ export default function ContactPage() {
                   Follow Us
                 </h4>
                 <div className="flex gap-4">
-                  <a
+                  <Link
                     href="#"
                     className="text-gray-600 hover:text-[#009d85] transition-colors text-2xl"
                   >
                     <FaLinkedin />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="text-gray-600 hover:text-[#009d85] transition-colors text-2xl"
                   >
                     <FaFacebookF />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="text-gray-600 hover:text-[#009d85] transition-colors text-2xl"
                   >
                     <FaTwitter />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -206,8 +210,9 @@ export default function ContactPage() {
 
             {submitSuccess && (
               <div className="mb-6 bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg">
-                Thank you! Your message has been sent successfully. We'll
-                contact you soon.
+                {
+                  "Thank you! Your message has been sent successfully. We'll contact you soon."
+                }
               </div>
             )}
 
@@ -357,14 +362,14 @@ export default function ContactPage() {
           </div>
 
           <div className="text-center mt-8">
-            <a
+            <Link
               href="https://maps.google.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-white border border-[#009d85] text-[#009d85] rounded-full font-medium hover:bg-[#009d85] hover:text-white transition-colors"
             >
               <SiGooglemaps className="mr-2" /> Get Directions
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -378,18 +383,18 @@ export default function ContactPage() {
             today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
+            <Link
               href="/contact"
               className="bg-white text-[#009d85] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
             >
               Book a Consultation
-            </a>
-            <a
+            </Link>
+            <Link
               href="tel:+12125550123"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#009d85] transition-colors"
             >
               Call Us Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>

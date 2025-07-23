@@ -22,8 +22,9 @@ export default function OurLocation() {
                 Our <span className="text-[#009d85]">Location</span>
               </h2>
               <p className="text-xl text-gray-600">
-                We're always happy to connect — whether it's a quick
-                consultation, a long-term partnership, or just a friendly hello.
+                {
+                  " We're always happy to connect — whether it's a quick consultation, a long-term partnership, or just a friendly hello."
+                }
               </p>
             </div>
 
@@ -39,9 +40,9 @@ export default function OurLocation() {
                   <address className="not-italic text-gray-600">
                     Gethunza LLC
                     <br />
-                    1234 Main Street, Suite 200
+                    {"1234 Main Street, Suite 200"}
                     <br />
-                    New York, NY 10001, USA
+                   {" New York, NY 10001, USA"}
                   </address>
                 </div>
               </div>
@@ -55,9 +56,9 @@ export default function OurLocation() {
                     Business Hours
                   </h3>
                   <p className="text-gray-600">
-                    Monday - Friday: 9:00 AM - 5:00 PM
+                    {"Monday - Friday: 9:00 AM - 5:00 PM"}
                     <br />
-                    Saturday - Sunday: Closed
+                    {"Saturday - Sunday: Closed"}
                   </p>
                 </div>
               </div>
@@ -74,7 +75,7 @@ export default function OurLocation() {
                     <h3 className="font-semibold text-gray-900 mb-2">
                       Call Us
                     </h3>
-                    <p className="text-gray-600">+1 (212) 555-0123</p>
+                    <p className="text-gray-600">{"+1 (212) 555-0123"}</p>
                   </div>
                 </a>
 

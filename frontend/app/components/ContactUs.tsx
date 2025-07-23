@@ -38,10 +38,7 @@ export default function ContactUs() {
   };
 
   return (
-    <section
-      className=" py-20 px-4"
-      id="contact"
-    >
+    <section className=" py-20 px-4" id="contact">
       <div className="max-w-7xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
         {/* LEFT: Contact Info */}
         <div className="bg-gradient-to-br from-[#009d85] to-[#007e6a] text-white p-12 space-y-8 flex flex-col justify-center relative overflow-hidden">
@@ -50,10 +47,11 @@ export default function ContactUs() {
           <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-white/10"></div>
 
           <div className="relative z-10">
-            <h2 className="text-4xl font-bold mb-4">Let's Work Together</h2>
+            <h2 className="text-4xl font-bold mb-4">{"Let's Work Together"}</h2>
             <p className="text-lg text-white/90 max-w-md">
-              Get in touch with our team for personalized financial solutions
-              tailored to your business needs.
+              {
+                " Get in touch with our team for personalized financial solutions tailored to your business needs."
+              }
             </p>
           </div>
 
@@ -94,7 +92,7 @@ export default function ContactUs() {
               Send Us a Message
             </h3>
             <p className="text-gray-600">
-              Fill out the form and we'll get back to you within 24 hours.
+              {" Fill out the form and we'll get back to you within 24 hours."}
             </p>
           </div>
 

@@ -1,4 +1,5 @@
 // app/pricing/page.tsx
+import Link from "next/link";
 import React from "react";
 import {
   FaCheck,
@@ -269,18 +270,18 @@ export default function PricingPage() {
             needs.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
+            <Link
               href="/contact"
               className="bg-white text-[#009d85] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
             >
               Get Started Today
-            </a>
-            <a
+            </Link>
+            <Link
               href="tel:+12125550123"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#009d85] transition-colors"
             >
               Call Us Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>

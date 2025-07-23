@@ -26,9 +26,8 @@ export function ReviewCard({ review }: { review: Review }) {
         {/* Content */}
         <blockquote className="mb-6 flex-grow">
           <p className="text-gray-600 italic">
-            "
             {review.content?.substring(0, 150) || "No review content provided."}
-            {review.content && review.content.length > 150 ? "..." : ""}"
+            {review.content && review.content.length > 150 ? "..." : ""}
           </p>
         </blockquote>
 

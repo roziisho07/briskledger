@@ -8,6 +8,7 @@ import {
   FaHandshake,
   FaAward,
 } from "react-icons/fa";
+import Link from "next/link";
 
 export default async function AboutPage() {
   //   const teamMembers = await sanityFetch<TeamMember[]>({ query: teamQuery });
@@ -136,86 +137,6 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section
-      {teamMembers && teamMembers.length > 0 && (
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <span className="inline-block px-4 py-2 bg-[#009d85]/10 text-[#009d85] rounded-full text-sm font-medium mb-4">
-                Professionals
-              </span>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Meet Our Team
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Dedicated experts committed to your financial success
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamMembers.map((member) => (
-                <div
-                  key={member._id}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all border border-gray-100 overflow-hidden"
-                >
-                  {member.image?.asset && (
-                    <div className="relative h-64 w-full">
-                      <Image
-                        src={member.image.asset.url}
-                        alt={member.name || "Team member photo"}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-[#009d85] font-medium mb-4">
-                      {member.role}
-                    </p>
-                    <p className="text-gray-600 mb-6">{member.bio}</p>
-                    <div className="flex space-x-4">
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          className="text-gray-500 hover:text-[#009d85]"
-                        >
-                          <span className="sr-only">LinkedIn</span>
-                          <svg
-                            className="h-6 w-6"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                          </svg>
-                        </a>
-                      )}
-                      {member.email && (
-                        <a
-                          href={`mailto:${member.email}`}
-                          className="text-gray-500 hover:text-[#009d85]"
-                        >
-                          <span className="sr-only">Email</span>
-                          <svg
-                            className="h-6 w-6"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
-                          </svg>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )} */}
-
       {/* Accolades Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -280,18 +201,18 @@ export default async function AboutPage() {
             Discover how our expertise can benefit your business.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
+            <Link
               href="/contact"
               className="bg-white text-[#009d85] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
             >
               Contact Our Team
-            </a>
-            <a
+            </Link>
+            <Link
               href="/services"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#009d85] transition-colors"
             >
               Explore Services
-            </a>
+            </Link>
           </div>
         </div>
       </section>

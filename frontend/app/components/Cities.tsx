@@ -46,7 +46,7 @@ export default function CitiesWeServe({
 
         <div className="mt-16 text-center">
           <p className="text-gray-500 mb-4">
-            Don't see your city? We likely serve your area too!
+            {"Don't see your city? We likely serve your area too!"}
           </p>
           <button className="inline-flex items-center px-6 py-3 border border-[#009d85] text-[#009d85] hover:bg-[#009d85] hover:text-white font-medium rounded-full transition-colors duration-300">
             Contact Us to Verify

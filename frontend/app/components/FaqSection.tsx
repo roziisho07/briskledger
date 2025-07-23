@@ -89,13 +89,13 @@ export function FAQSection() {
 
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-6">
-            Didn't find what you're looking for?
+            {"Didn't find what you're looking for?"}
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center px-6 py-3 bg-[#009d85] hover:bg-[#007e6a] text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all"
           >
-            Contact Our Team
+            {"Contact Our Team"}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="ml-2 h-5 w-5"
