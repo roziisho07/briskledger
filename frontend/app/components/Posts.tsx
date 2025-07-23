@@ -4,9 +4,9 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { morePostsQuery, allPostsQuery } from "@/sanity/lib/queries";
 import { Post as PostType, AllPostsQueryResult } from "@/sanity.types";
 import DateComponent from "@/app/components/Date";
-import OnBoarding from "@/app/components/Onboarding";
 import Avatar from "@/app/components/Avatar";
 import { createDataAttribute } from "next-sanity";
+import NotFound from "./NotFound";
 
 const Post = ({ post }: { post: AllPostsQueryResult[number] }) => {
   const { _id, title, slug, excerpt, date, author } = post;
@@ -89,25 +89,24 @@ export const MorePosts = async ({
   }
 
   return (
-    <Posts heading={`Recent Posts (${data?.length})`}>
-      {data?.map((post: any) => <Post key={post._id} post={post} />)}
+    <Posts heading={`Latest Insights (${data?.length})`}>
+      {data?.map((post) => <Post key={post._id} post={post} />)}
     </Posts>
   );
 };
-
 export const AllPosts = async () => {
   const { data } = await sanityFetch({ query: allPostsQuery });
 
   if (!data || data.length === 0) {
-    return <OnBoarding />;
+    return <NotFound />;
   }
 
   return (
     <Posts
-      heading="Recent Posts"
-      subHeading={`${data.length === 1 ? "This blog post is" : `These ${data.length} blog posts are`} populated from your Sanity Studio.`}
+      heading="Our Blog"
+      subHeading="Expert insights and accounting resources to help your business thrive"
     >
-      {data.map((post: any) => (
+      {data.map((post) => (
         <Post key={post._id} post={post} />
       ))}
     </Posts>

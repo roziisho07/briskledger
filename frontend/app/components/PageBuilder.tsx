@@ -66,7 +66,7 @@ function renderEmptyState(page: GetPageQueryResult) {
         This page has no content!
       </h1>
       <p className="mt-2 text-base text-gray-500">
-        Open the page in Sanity Studio to add content.
+        {/* Open the page in Sanity Studio to add content. */}
       </p>
       <div className="mt-10 flex">
         <Link

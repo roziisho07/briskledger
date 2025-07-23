@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import MobileMenu from "./MobileNav";
 
 export default async function Header() {
   const { data: settings } = await sanityFetch({
@@ -8,48 +10,133 @@ export default async function Header() {
   });
 
   return (
-    <header className="fixed z-50 h-24 inset-0 bg-white/80 flex items-center backdrop-blur-lg">
-      <div className="container py-6 px-2 sm:px-6">
-        <div className="flex items-center justify-between gap-5">
-          <Link className="flex items-center gap-2" href="/">
-            <span className="text-lg sm:text-2xl pl-2 font-semibold">
-              {settings?.title || "Sanity + Next.js"}
-            </span>
-          </Link>
-
-          <nav>
-            <ul
-              role="list"
-              className="flex items-center gap-4 md:gap-6 leading-5 text-xs sm:text-base tracking-tight font-mono"
-            >
-              <li>
-                <Link href="/about" className="hover:underline">
-                  About
-                </Link>
-              </li>
-
-              <li className="sm:before:w-[1px] sm:before:bg-gray-200 before:block flex sm:gap-4 md:gap-6">
-                <Link
-                  className="rounded-full flex gap-4 items-center bg-black hover:bg-blue focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200"
-                  href="https://github.com/sanity-io/sanity-template-nextjs-clean"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="whitespace-nowrap">View on GitHub</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="hidden sm:block h-4 sm:h-6"
-                  >
-                    <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path>
-                  </svg>
-                </Link>
-              </li>
-            </ul>
-          </nav>
+    <>
+      <header className="fixed z-50  top-0 w-full bg-white/90 backdrop-blur-md shadow-sm">
+        {/* Top contact bar */}
+        <div className="bg-[#009d85] text-white text-sm">
+          <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div className="flex items-center space-x-4">
+              <a
+                href="tel:+1234567890"
+                className="flex items-center hover:underline"
+              >
+                <FaPhoneAlt className="mr-2" />
+                +1 (234) 567-890
+              </a>
+              <a
+                href="mailto:info@accounting.com"
+                className="flex items-center hover:underline"
+              >
+                <FaEnvelope className="mr-2" />
+                info@accounting.com
+              </a>
+            </div>
+            <div className="hidden md:flex items-center space-x-4">
+              <span>Mon-Fri: 9AM-5PM</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+
+        {/* Main navigation */}
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            {/* Logo with Tagline */}
+            <Link href="/" className="flex items-center group">
+              <div className="bg-[#009d85] text-white p-2 rounded-lg mr-3 group-hover:rotate-12 transition-transform">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-gray-800 group-hover:text-[#009d85] transition-colors">
+                  {settings?.title || "BriskLedger"}
+                </span>
+                <span className="text-xs font-medium text-gray-500 group-hover:text-[#009d85] transition-colors">
+                  Remote Accounting & Bookkeeping
+                </span>
+              </div>
+            </Link>
+            {/* Navigation */}
+            <nav className="hidden md:block">
+              <ul className="flex items-center space-x-8">
+                <li>
+                  <Link
+                    href="/"
+                    className="text-gray-700 hover:text-[#009d85] font-medium transition-colors relative group"
+                  >
+                    Home
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#009d85] group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-gray-700 hover:text-[#009d85] font-medium transition-colors relative group"
+                  >
+                    About
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#009d85] group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services"
+                    className="text-gray-700 hover:text-[#009d85] font-medium transition-colors relative group"
+                  >
+                    Services
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#009d85] group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/pricing"
+                    className="text-gray-700 hover:text-[#009d85] font-medium transition-colors relative group"
+                  >
+                    Pricing
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#009d85] group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="bg-[#009d85] hover:bg-[#007e6a] text-white px-6 py-2 rounded-full font-medium transition-colors shadow-md hover:shadow-lg flex items-center"
+                  >
+                    Contact Us
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 ml-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4v16m8-8H4"
+                      />
+                    </svg>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+
+            {/* Mobile menu button */}
+          </div>
+        </div>
+      </header>
+
+      <MobileMenu />
+    </>
   );
 }
